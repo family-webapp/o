@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubham & Brothers Library</title>
+  <link rel="stylesheet" href="homestyle.css" />
+</head>
+
+<body>
+  <div class="container">
+    <input type="checkbox" id="menu-checkbox" />
+    <label for="menu-checkbox" class="menu-toggle">☰</label>
+
+    <!-- Side Menu -->
+    <nav class="nav-links">
+      <h3 id="name">Shubham &... Library</h3>
+      <a id="addmission" href="addmition.html" target="_blank">Addmission</a>
+      <a id="contactus" href="contactus.html" target="_blank">Contact Us</a>
+      <h3 id="ourbooks">Our Books</h3>
+      <a href="" target="_blank">1-12th Books</a>
+      <a href="" target="_blank">Ncert</a>
+      <a href="" target="_blank">Lucent</a>
+      <a href="" target="_blank">Oxford</a>
+      <a href="" target="_blank">Hindi Grammar</a>
+      <a href="" target="_blank">English Grammar</a>
+      <a href="" target="_blank">GK new releases</a>
+      <h3 id="help">Need Help</h3>
+      <a href="feeshelp.html" target="_blank">Addmission and Fees</a>
+      <a href="" target="_blank">Location related</a>
+      <a href="" target="_blank">Time table</a>
+    </nav>
+
+    <!-- ✅ Blur background overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <header>
+      <nav id="nav1">
+        <img id="mainlogo" src="library-logo.png" alt="library logo" />
+
+      </nav>
+      <nav id="nav2">
+        <div>
+          <a id="admmit" href="addmition.html" target="_blank">Addmition</a>
+          <a id="about" href="aboutus.html">About Us</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h3 id="welcomenote">Welcome to Shubham & Brothers Library</h3>
+      <!-- Feature Scroll Section -->
+      <section class="feature-scrollbar">
+        <div class="feature-item">
+          <img src="https://cdn-icons-png.flaticon.com/128/2942/2942841.png" alt="Reading Area">
+          <div class="feature-text">
+            <h4>Comfortable Reading Zone</h4>
+            <p>Join our library by giving only 120rs/month and Enjoy peace, AC and Comfortable seats for long study sessions.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="https://cdn-icons-png.flaticon.com/128/3063/3063827.png" alt="WiFi">
+          <div class="feature-text">
+            <h4>Free High-Speed WiFi</h4>
+            <p>Here we give Fast & Free internet service for digital books and online classes.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="read.png" alt="Books">
+          <div class="feature-text">
+            <h4>Easy ways of Addmitions </h4>
+            <p>Here We offer reliable services for addmition. Students can admmit their Names both offline and online.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="https://cdn-icons-png.flaticon.com/128/1046/1046784.png" alt="Support">
+          <div class="feature-text">
+            <h4>Helpful Staff</h4>
+            <p>Need help? Just click on "Contact Us" to call us and solve your query.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+   
+    <footer>
+      <h3 class="feature-foot" id="feature-foot">Our Features</h3>
+      <a class="feature-foot" id="addmit-foot" href="addmition.html">Addmition</a>
+      <a class="feature-foot" id="consult-foot" href="contactus.html">Contact Us</a>
+   
+
+      <h3 class="helplinks-foot" id="helplinks-foot">Need Help?</h3>
+      <a class="helplinks-foot" id="Fees-foot" href="feeshelp.html">Info About fees</a>
+      <a class="helplinks-foot" id="Location-foot" href="">Library Location</a>
+      <a class="helplinks-foot" id="Time-table-foot" href="">Time-table</a>
+      <a class="helplinks-foot" id="about-foot" href="aboutus.html">About us!</a>
+
+    </footer>
+    <footer class="footer2">
+         <img id="librarylogo-foot" src="librarylogo-foot2.png" alt="library-end">
+      <div><P id="copyright-love">Made With </p> <p id="heart">&hearts;</p> <p id="copyright-love2">From Himanshu</P></div>
+      
+      <p id="copyright-1">This is a Private Website developed for Shubham & ... library.</p>
+      <p id="copyright-main">copyright &COPY; reserved, to Shubham &.. ,</p>
+    </footer>
+  </div>
+
+  <!-- ✅ Script to close the menu -->
+
+  <script>
+    // ✅ Close hamburger menu when overlay is clicked
+    document.getElementById("overlay").addEventListener("click", () => {
+      document.getElementById("menu-checkbox").checked = false;
+    });
+
+    // ✅ Drag-to-scroll for feature scrollbar
+    const slider = document.querySelector('.feature-scrollbar');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    if (slider) {
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+    }
+  </script>
+
+
+</body>
+
+</html>

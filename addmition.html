@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" width="device-width" initial scale="1.0">
+  <style>
+    /* General Page Styling */
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    /* Title Section */
+    #titles {
+      text-align: center;
+      padding: 20px;
+      background: #003366;
+      color: white;
+      border-bottom: 4px solid #ffcc00;
+     
+    }
+
+    #Library-logo-round {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      background: white;
+      display: inline-block;
+      margin-bottom: 10px;
+
+    }
+
+    #title-main {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    #title-secondary {
+      font-size: 15px;
+      margin: 0;
+    }
+
+    #title-last {
+      font-size: 14px;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    /* Form Styling */
+    #addmition-form { 
+      width: 89.5%;
+      max-width: 600px;
+      background: white;
+      margin: 0px auto;
+      padding: 25px;
+      border-radius: 3px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #addmition-form div {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* Inputs and Selects same width */
+    input,
+    select {
+      width: 95%;
+      box-sizing: border-box;
+      padding: 11px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #003366;
+    }
+
+    /* Note */
+    #note {
+      font-size: 13px;
+      color: #d9534f;
+      background: #fff3f3;
+      padding: 10px;
+      width: 91%;
+      border-radius: 5px;
+    }
+
+    /* Submit Button */
+    button {
+      width: 96%;
+      padding: 10px;
+      font-size: 16px;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #002244;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      #title-main {
+        font-size: 17px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      #title-main {
+        font-size: 16px;
+      }
+
+      #addmition-form {
+        width: 90%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="titles">
+    <img id="Library-logo-round" src="addmition-logo.png" alt="addmition-logo">
+    <h2 id="title-main">SHUBHAM & BROTHERS LIBRARY PATHALAPOKHAR</h2>
+    <p id="title-secondary">ONLINE ADDMITION / APPLICATION FORM</p>
+    <p id="title-last">FOR ONLINE ADDMITION (2026)</p>
+  </div>
+
+  <form id="addmition-form" action="">
+    <section id="texts">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" placeholder="Enter Your Name" required>
+      </div>
+
+      <div>
+        <label for="mobile">Phone</label>
+        <input id="mobile" type="tel" name="mobile" placeholder="Mobile number" required>
+      </div>
+
+      <div>
+        <label for="address">Address</label>
+        <input id="address" name="address" type="text" placeholder="Address" required>
+      </div>
+
+      <div>
+        <label for="seatno">Seat no</label>
+        <select name="seatno" id="seatno" required>
+          <option value="availableseat" disabled>Available Seats</option>
+          <option value="1A">1A</option>
+          <option value="2A">2A</option>
+          <option value="3A">3A</option>
+          <option value="4A">4A</option>
+          <option value="5A">5A</option>
+          <option value="6A">6A</option>
+          <option value="7A">7A</option>
+          <option value="8A">8A</option>
+          <option value="9A">9A</option>
+          <option value="10A">10A</option>
+          <option value="11A">11A</option>
+          <option value="12A">12A</option>
+          <option value="13A">13A</option>
+          <option value="14A">14A</option>
+          <option value="15A">15A</option>
+
+        </select>
+      </div>
+
+      <!-- <div>
+    <label for="timeslot">Time</label>
+    <select name="timeslot" id="timeslot" required>
+        <option value="" disabled selected>Select Time</option>
+        <option value="10am-2pm">10:00 AM – 2:00 PM</option>
+        <option value="2pm-6pm">2:00 PM – 6:00 PM</option>
+        <option value="6pm-10pm">6:00 PM – 10:00 PM</option>
+        <option value="10pm-2am">10:00am - 2:00pm</option>
+        <option value="2am-6am">2:00am - 6:00am</option>
+        <option value="10pm-2am">6:00am - 10:00pm</option>
+    </select>
+</div> -->
+
+      <div>
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+          <option value="select gender" disabled>Select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="date">Date of addmition</label>
+        <input id="date" name="date" type="date">
+      </div>
+
+      <div>
+        <p id="note">Note:Agar addmit student addmition form fill karne ke do dino ke andar fees jama nahin karta hai to
+          uski addmit seat kisi aur ko di ja sakti hai.</p>
+      </div>
+
+      <button>Submit</button>
+
+    </section>
+
+
+  </form>
+
+  <script>
+    const form = document.getElementById("addmition-form");
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw9IlmmlT3_oVRFWS2_S5ZBO3qyp5gqr8JIFBbjLPXmE2I8UVH2Z-KsjG5ansGcB2ET/exec";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Remove previous errors
+      document.querySelectorAll(".error-text").forEach(el => el.remove());
+      clearMessage();
+
+      const mobileInput = document.getElementById("mobile");
+      const seatnoInput = document.getElementById("seatno");
+      let valid = true;
+
+      // Clean mobile: trim and remove non-digit characters
+      const mobileRaw = mobileInput.value.trim();
+      const mobile = mobileRaw.replace(/\D/g, "");
+
+      if (mobile.length !== 10) {
+        showError(mobileInput, "Mobile number must be exactly 10 digits");
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Prepare form data
+      const formData = new FormData(form);
+      formData.set("mobile", mobile);
+
+      try {
+        const res = await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          body: formData
+        });
+        const data = await res.json();
+
+        if (data.status === "success") {
+          showSuccess();
+        }
+        else if (data.field) {
+          // This part now handles BOTH seatno and mobile errors
+          const fieldElem = document.getElementById(data.field);
+          showError(fieldElem, data.message);
+        }
+        else {
+          showFailure();
+        }
+
+      } catch (error) {
+        showFailure();
+      }
+    });
+
+    function showError(element, message) {
+      const error = document.createElement("div");
+      error.className = "error-text";
+      error.style.color = "red";
+      error.style.fontSize = "13px";
+      error.textContent = message;
+      element.parentNode.appendChild(error);
+    }
+
+    function showSuccess() {
+      clearMessage();
+      const div = document.createElement("div");
+      div.style.textAlign = "center";
+      div.style.padding = "50px";
+      div.innerHTML = `
+      <div style="font-size:80px; color:green;">✔</div>
+      <h2 style="color:green;">ADDMITION SUCCESSFUL</h2>
+      <p style="text-align:left; padding: 10px; border-radius: 5px;
+       background-color:#deffde; font-size:13px; color: green; margin-left: 20px;">
+       Apka Addmition pura ho gaya hai, kuchh hin samay ke bad ham apke diye gaye number par call kar jankari ki pusti karenge. 
+       Agar apne mobile no galat dala hai to kripya sahi mobile no dusre seat no ke sath dalen... Thank you!
+      </p>
+    `;
+      document.body.innerHTML = "";
+      document.body.appendChild(div);
+
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 8000);
+    }
+
+    function showFailure() {
+      clearMessage();
+      const div = document.createElement("div");
+      div.style.textAlign = "center";
+      div.style.padding = "30px";
+      div.style.background = "#ffffff";
+      div.style.borderRadius = "5px";
+      div.innerHTML = `
+      <div style="font-size:60px; color:red;">❌</div>
+      <h2 style="color:red;">FORM SUBMISSION UNSUCCESSFUL</h2>
+      <p style="text-align:left;">-Reason(karan):</p>
+      <ul style="text-align:left; display:block;">
+        <li>Apka network slow ho sakta hai</li>
+        <li>Website mein abhi kuch gadbadi ho sakti hai</li>
+        <li>Apne form bharne mein kuch galti ki hai...</li>
+      </ul>
+    `;
+      document.body.innerHTML = "";
+      document.body.appendChild(div);
+      setTimeout(() => {
+        window.location.href = "addmition.html";
+      }, 7000);
+    }
+
+    function clearMessage() {
+      document.querySelectorAll(".error-text").forEach(el => el.remove());
+    }
+  </script>
+
+
+</body>
+
+</html>

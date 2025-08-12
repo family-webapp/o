@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Shubham & Brothers Library</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            line-height: 1.7;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        .line {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .line.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .next-btn {
+            margin-top: 5px;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            padding: 10px 25px;
+            font-size: 16px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .next-btn:hover {
+            background: #555;
+        }
+
+        .line1 {
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        
+
+
+        @media (max-width: 768px) {
+        
+        }
+             #bg-video-hori {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            /* Keep it behind the content */
+            object-fit: contain;
+          /* 
+        Make it cover entire background */
+        }
+        
+    </style>
+</head>
+
+
+<body>
+
+    <video autoplay muted loop playsinline id="bg-video-hori">
+        <source src="about-lib-hori.mp4" type="video/mp4">
+    </video>
+
+
+    <div class="container">
+        <div id="page1" class="page">
+            <p class="line"><b>Shubham and Brothers Library's About...</b></p>
+            <p class="line1">INTRODUCTION</p>
+            <p class="line">Shubham & Brothers Library is a Private library</p>
+            <p class="line">Service started on 08/04/26 for helping students</p>
+            <p class="line">In Their studies. It provides students a peaceful</p>
+            <p class="line">Comfortable and study concentrated environment</p>
+            <p class="line">In a rural area to give them a chance to compete</p>
+            <p class="line">And make their future bright. Again it's a Private</p>
+            <p class="line">Library so we charge a small fee to students for</p>
+            <p class="line">Maintenance of the Library. You will get info about</p>
+            <p class="line">fees in "Admission and fees section"...</p>
+            <button class="next-btn" onclick="nextPage()">Next</button>
+        </div>
+
+        <div id="page2" class="page" style="display:none;">
+            <p class="line"><b>Shubham and Brothers Library's Info...</b></p>
+            <p class="line"><b>FEATURES WE OFFER!</b></p>
+            <p class="line">We offer students a peaceful place where they can</p>
+            <p class="line">concentrate. we also give students long hour study </p>
+            <p class="line">chairs, Unlimited WiFi, Air conditioners, Bright light </p>
+            <p class="line">bulbs for good vision. Generators for 24hr electricity</p>
+            <p class="line">We don't compromise with student's comfort bcz</p>
+            <p class="line">backup. it's our responsibility to ensure that</p>
+            <p class="line">none of the students should face any kind of</p>
+            <p class="line">Problem with their studies....</p>
+            <button class="next-btn" onclick="nextPage()">Next</button>
+        </div>
+        <div id="page3" class="page" style="display:none;">
+            <p class="line"><b>Shubham and Brothers Library's Info...</b></p>
+            <p class="line"><b>Addmition & fees?</b></p>
+            <p class="line">As we mentioned before that We offer a reliable</p>
+            <p class="line">Library service in a rural area. In short we give</p>
+            <p class="line">services like Unlimited WiFi, AC, etc. And For </p>
+            <p class="line">these services We charge a small fee of 300rs/month.</p>
+            <p class="line">And For your kind info we don't even charge extra fee</p>
+            <P class="line">for addmition. The fee you Pay us when you addmit</P>
+            <p class="line">Is your first month charge.</p>
+            <p class="line">I hope you understand...</p>
+            <p class="line"><b>Last Page</b>"Thanks for being Awesome&hearts;"</p>
+
+            <button class="next-btn" onclick="nextPage()">HOME</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        let currentPage = 1;
+
+        function showLines(pageId) {
+            const lines = document.querySelectorAll(`#${pageId} .line`);
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.classList.add('show');
+                }, index * 300); // delay between lines
+            });
+        }
+
+        function nextPage() {
+            const current = document.getElementById(`page${currentPage}`);
+            current.style.display = 'none';
+            currentPage++;
+
+            const next = document.getElementById(`page${currentPage}`);
+            if (next) {
+                next.style.display = 'block';
+                showLines(`page${currentPage}`);
+            } else {
+                window.location.href = "home.html"; // Redirect to home page
+            }
+        }
+
+        // Show first page lines on load
+        showLines('page1');
+    </script>
+
+</body>
+
+</html>
