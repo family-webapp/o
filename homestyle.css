@@ -12,6 +12,7 @@ body {
 
 #nav1 {
   height: 50px;
+  width: 100%;
   background-color: #f0e5d8e6;
   border-bottom: 1px solid #39373735;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.131);
@@ -19,7 +20,8 @@ body {
 
 #nav2 {
   height: 33px;
-  background-color:  #e1dcc5 ;
+  width: 100%;
+  background-color: #e1dcc5;
   border-bottom: 1px solid #3937372c;
 }
 
@@ -36,12 +38,12 @@ body {
 
 #about {
   font-family: helvetica;
-  font-size:17px;
+  font-size: 17px;
   text-decoration: none;
   font-weight: 500;
   padding-top: 5px;
   color: rgba(0, 0, 0, 0.893);
-  margin-left: 160px;
+  margin-left: 150px;
 }
 
 #mainlogo {
@@ -79,7 +81,7 @@ body {
   top: 0;
   right: 0;
   width: 57%;
-  height: 100vh;
+  height: 100%;
   background-color: #f8f3eff6;
   display: flex;
   flex-direction: column;
@@ -159,7 +161,7 @@ body {
   flex-direction: row;
   text-decoration: none;
 }
- 
+
 
 #contactus {
   font-size: 18px;
@@ -178,18 +180,23 @@ body {
   margin-bottom: 22px;
   text-decoration: none;
 }
+
 /* Hover effect for Addmission and Contact Us inside hamburger menu */
 .nav-links a#addmission:hover {
-    background-color: #ffffff00;  /* Dark blue background */
-    color: rgb(15, 127, 255);               /* White text */
-    border-radius: 6px;
+  background-color: #ffffff00;
+  /* Dark blue background */
+  color: rgb(15, 127, 255);
+  /* White text */
+  border-radius: 6px;
 
 }
 
 .nav-links a#contactus:hover {
-    background-color: rgb(0, 140, 255);  /* Dark blue background */
-    color: rgb(246, 246, 246);               /* White text */
-    border-radius: 4px;
+  background-color: rgb(0, 140, 255);
+  /* Dark blue background */
+  color: rgb(246, 246, 246);
+  /* White text */
+  border-radius: 4px;
 }
 
 
@@ -288,10 +295,10 @@ body {
 
 
 footer {
-  min-width: 100vh;
-  height: 450px;
+  max-width: 100%;
+  height: 220px;
   background-color: rgb(0, 0, 0);
-  margin-top: 55vh;
+  margin-top: 465px;
 }
 
 .feature-foot {
@@ -377,10 +384,10 @@ footer {
 }
 
 .footer2 {
-  min-width: 100vh;
-  height: 220px;
+  width: auto;
+  height: 200px;
   background-color: #000000;
-  margin-top: -26vh;
+  margin-top: 0px;
   border-top: 2px solid #585555;
 }
 
@@ -388,7 +395,7 @@ footer {
   display: inline-block;
   font-size: 23px;
   color: white;
-  margin-left: 110px;
+  margin-left: 100px;
 
 
 }
@@ -401,7 +408,7 @@ footer {
 }
 
 #heart {
-  margin-top: -10px;
+  margin-top: -15px;
   font-size: 50px;
   color: red;
   display: inline-block;
@@ -411,9 +418,9 @@ footer {
   font-size: 15px;
   color: white;
   /* margin-left: 90px; */
-  margin-top: 5vh;
+  margin-top: 20px;
   text-align: LEFT;
-  margin-left: 75px ;
+  margin-left: 55px;
 }
 
 #copyright-main {
@@ -421,10 +428,11 @@ footer {
   font-size: 14px;
   color: rgb(255, 148, 76);
   /* margin-left: 90px; */
-  margin-top: 1vh;
+  margin-top: 5px;
   text-align: left;
-  margin-left: 110px;
+  margin-left: 90px;
 }
+
 #librarylogo-foot {
   width: 120px;
   border-radius: 5px;
@@ -439,86 +447,105 @@ footer {
     flex: 0 0 31%;
   }
 
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 100vh;
-    background-color: #f8f3eff6;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 0.4s ease;
-    z-index: 10;
-    padding: 20px;
+  /* 📱 Mobile view fix */
+  @media (max-width: 768px) {
+
+    /* Nav logo center me ho jaye */
+    #mainlogo {
+      margin-left: 10px;
+      width: 65px;
+    }
+
+    /* Welcome note center ho */
+    #welcomenote {
+      font-size: 14px;
+      margin-left: 15px;
+      margin-right: 15px;
+      text-align: center;
+    }
+
+    /* Feature section full width ho */
+    .feature-scrollbar {
+      margin: 10px;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .feature-item {
+      flex: 0 0 95%;
+      min-height: auto;
+      flex-direction: column;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .feature-item img {
+      margin: 0 auto 10px auto;
+      width: 60px;
+      height: 60px;
+    }
+
+    .feature-text h4 {
+      margin: 5px 0;
+      font-size: 15px;
+    }
+
+    .feature-text p {
+      font-size: 12px;
+      margin: 0;
+    }
+
+    /* Footer ko stack karna */
+    footer {
+      height: auto;
+      padding: 20px 15px;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #feature-foot,
+    #helplinks-foot {
+      margin: 0;
+      padding: 10px 0;
+      text-align: left;
+    }
+
+    #addmit-foot,
+    #consult-foot,
+    #Fees-foot,
+    #Location-foot,
+    #Time-table-foot,
+    #about-foot {
+      margin: 5px 0;
+      display: block;
+    }
+
+    .footer2 {
+      height: auto;
+      padding: 15px;
+      text-align: center;
+    }
+
+    #librarylogo-foot {
+      margin: 10px auto;
+      display: block;
+    }
+
+    #copyright-love,
+    #copyright-love2,
+    #heart {
+      display: inline;
+      font-size: 16px;
+      margin: 2px;
+    }
+
+    #copyright-1,
+    #copyright-main {
+      margin: 10px auto;
+      font-size: 12px;
+      text-align: center;
+    }
   }
-  #nav2 {
-  height: 0px;
-  
-
-}
-#admmit {
- font-size: 0px;
-}
-
-#about {
- font-size: 0px;
-}
-.footer2 {
-  min-height: 0px;
-  min-width: 0px;
-  
-}
-
-#copyright-love {
-  display: inline-block;
-  font-size: 23px;
-  color: white;
-  margin-left: 110px;
-
-
-}
-
-#copyright-love2 {
-  display: inline-block;
-  font-size: 23px;
-  color: white;
-
-}
-
-#heart {
-  margin-top: -10px;
-  font-size: 50px;
-  color: red;
-  display: inline-block;
-}
-
-#copyright-1 {
-  font-size: 15px;
-  color: white;
-  /* margin-left: 90px; */
-  margin-top: 5vh;
-  text-align: LEFT;
-  margin-left: 75px ;
-}
-
-#copyright-main {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
-  color: rgb(255, 148, 76);
-  /* margin-left: 90px; */
-  margin-top: 1vh;
-  text-align: left;
-  margin-left: 110px;
-}
-#librarylogo-foot {
-  width: 120px;
-  border-radius: 5px;
-  margin-left: 190px;
-  margin-top: 10px;
-
-}
-
-
 }
